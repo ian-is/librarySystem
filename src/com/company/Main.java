@@ -12,12 +12,16 @@ import java.io.IOException;
 public class Main {
 //add a sign in and register system
 
+
     private static File bookStore = new File("bookDataBase.txt");
     private static File logInDetails = new File("LogInDetails.txt");
     private static ArrayList<String> bookList = new ArrayList<>();
 
 
     public static void main(String[] args) {   //main menu
+
+        Menu main = new Menu();  //this is the Menu class
+        main.mainMenu();
 
         String logInMenu = getInput("would you like to log in or register");
         if (logInMenu.equals("log in")) {
@@ -167,15 +171,12 @@ public class Main {
 
         String userEmailRegister = getInput("enter a email you would like to register");
         String userPasswordRegister = getInput("Enter a password you would like to register");
-        emailAndPassword = userEmailRegister  + "," + userPasswordRegister + "." +  "\n";
+        emailAndPassword = userEmailRegister + "," + userPasswordRegister + "." + "\n";
 
         return emailAndPassword;
-}
 
     }
-
-
-
+}
 
 
 
