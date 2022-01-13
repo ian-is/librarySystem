@@ -19,6 +19,8 @@ public class Main {
 
 
     public static void main(String[] args) {   //main menu
+        CreateLogInFile();
+        writeToLogInFile();
 
         Menu main = new Menu();  //this is the Menu class
         main.mainMenu();
@@ -30,8 +32,6 @@ public class Main {
             UserRegister();
 
         }
-
-
         boolean choice = true;
         while (choice) {
             String menu = getInput("would you like to:" + "add a book," + " " + " " + "search for a book," + " " + " " + "Exit");
@@ -139,11 +139,10 @@ public class Main {
         }
     }
 
-    private static void writeToLogInFile() {
+    private static void writeToLogInFile(String details) {
         try {
-            String accountDetails = "";
             FileWriter writer = new FileWriter(logInDetails.getName(), true);
-            writer.write(accountDetails);
+            writer.write(details);
             writer.close();
             System.out.println("successfully added to the file");
         } catch (IOException e) {
@@ -162,7 +161,7 @@ public class Main {
             String userPassword = getInput("enter your password");
         }
 
-    }
+}
 
     private static String UserRegister() {
         // String userRegister = getInput("would you like to register");
@@ -176,7 +175,7 @@ public class Main {
         return emailAndPassword;
 
     }
-}
+    }
 
 
 
