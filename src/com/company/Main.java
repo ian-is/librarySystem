@@ -23,9 +23,9 @@ public class Main {
         writeToLogInFile();
 
         Menu main = new Menu();  //this is the Menu class
-        main.mainMenu();
+        Main.mainMenu();
 
-        String logInMenu = getInput("would you like to log in or register");
+        String logInMenu = Menu.getInput("would you like to log in or register");
         if (logInMenu.equals("log in")) {
             LogIn();
         } else if (logInMenu.equals("register")) {
@@ -99,12 +99,6 @@ public class Main {
         } catch (Exception e) {
             System.out.println();
         }
-    }
-
-    public static String getInput(String prompt) {
-        System.out.println(prompt);
-        Scanner input = new Scanner(System.in);
-        return input.nextLine();
     }
 
     public static String BookDetails() {             //details about the book
