@@ -1,7 +1,7 @@
 package com.company;
 
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
+import com.company.Menu;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -13,17 +13,35 @@ public class Main {
 //add a sign in and register system
 
 
-    private static File bookStore = new File("bookDataBase.txt");
-    private static File logInDetails = new File("LogInDetails.txt");
-    private static ArrayList<String> bookList = new ArrayList<>();
+
 
 
     public static void main(String[] args) {   //main menu
-        CreateLogInFile();
+
+        Menu.mainMenu();
+    }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /* CreateLogInFile();
         writeToLogInFile();
 
         Menu main = new Menu();  //this is the Menu class
-        Main.mainMenu();
+        Main.main();
+
+
+
+
 
         String logInMenu = Menu.getInput("would you like to log in or register");
         if (logInMenu.equals("log in")) {
@@ -34,7 +52,7 @@ public class Main {
         }
         boolean choice = true;
         while (choice) {
-            String menu = getInput("would you like to:" + "add a book," + " " + " " + "search for a book," + " " + " " + "Exit");
+            String menu = Menu.getInput("would you like to:" + "add a book," + " " + " " + "search for a book," + " " + " " + "Exit");
             if (menu.equalsIgnoreCase("add a book")) {
                 // userInput();
                 AddToList();
@@ -81,7 +99,7 @@ public class Main {
     }
 
     public static void AddToList() {                   //adds the details to the list
-        int add = Integer.parseInt(getInput("how many books would you like to add"));
+        int add = Integer.parseInt(Menu.getInput("how many books would you like to add"));
         for (int i = 0; i < add; i++) {
             bookList.add(BookDetails());
         }
@@ -91,10 +109,10 @@ public class Main {
         try {
             Scanner input = new Scanner(System.in);
 
-            int numOfBooks = Integer.parseInt(getInput("how many books do you want to add"));
+            int numOfBooks = Integer.parseInt(Menu.getInput("how many books do you want to add"));
             String[] bookTitle = new String[numOfBooks];
             for (int i = 0; i < numOfBooks; i++) {
-                bookTitle[i] = getInput("please enter your book title" + " " + " " + (i + 1));
+                bookTitle[i] = Menu.getInput("please enter your book title" + " " + " " + (i + 1));
             }
         } catch (Exception e) {
             System.out.println();
@@ -105,10 +123,10 @@ public class Main {
         String bookDetails = "";
         while (bookDetails.equals("")) {
             try {
-                String bookTitle = getInput("Enter the title of your book");
-                String author = getInput("Enter the name of the author");
-                String genre = getInput("Enter the genre of the book");
-                int ISBN = Integer.parseInt(getInput("Enter the ISBN"));
+                String bookTitle = Menu.getInput("Enter the title of your book");
+                String author = Menu.getInput("Enter the name of the author");
+                String genre = Menu.getInput("Enter the genre of the book");
+                int ISBN = Integer.parseInt(Menu.getInput("Enter the ISBN"));
                 bookDetails = bookTitle + " , " + author + " , " + genre + " , " + ISBN + " . " + "\n";
             } catch (Exception e) {
                 System.out.println("error, please re-enter details" + " " + e);
@@ -149,10 +167,10 @@ public class Main {
 
     private static void LogIn() {                           //get the user to input their log in details
 
-        String userInputLogin = getInput("Hello, would you like to sign in");
+        String userInputLogin = Menu.getInput("Hello, would you like to sign in");
         if (userInputLogin.equals("yes")) {
-            String userLogIn = getInput("enter your email");
-            String userPassword = getInput("enter your password");
+            String userLogIn = Menu.getInput("enter your email");
+            String userPassword = Menu.getInput("enter your password");
         }
 
 }
@@ -162,8 +180,8 @@ public class Main {
         //if (userRegister.equals("yes")){
         String emailAndPassword = "";
 
-        String userEmailRegister = getInput("enter a email you would like to register");
-        String userPasswordRegister = getInput("Enter a password you would like to register");
+        String userEmailRegister = Menu.getInput("enter a email you would like to register");
+        String userPasswordRegister = Menu.getInput("Enter a password you would like to register");
         emailAndPassword = userEmailRegister + "," + userPasswordRegister + "." + "\n";
 
         return emailAndPassword;
