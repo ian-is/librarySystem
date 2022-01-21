@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Scanner;
                                                                        // this class contains the menu of the system: get input, main menu methods
-import static com.company.Main.AddToList;
+import static com.company.FileHandling.AddToList;
 
 public class Menu {
 

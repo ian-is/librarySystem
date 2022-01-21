@@ -15,7 +15,7 @@ public class Members {
                 bookTitle[i] = Menu.getInput("please enter your book title" + " " + " " + (i + 1));
             }
         } catch (Exception e) {
-            System.out.println();
+            System.out.println(e);
         }
     }
     public static void LogIn() {                           //get the user to input their log in details

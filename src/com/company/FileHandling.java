@@ -43,7 +43,7 @@ public class FileHandling {
         }
     }
 
-    private static void CreateLogInFile() {
+    public static void CreateLogInFile() {
         try {
             if (logInDetails.createNewFile()) {
                 System.out.println("file created:" + logInDetails.getName());
@@ -57,7 +57,7 @@ public class FileHandling {
         }
     }
 
-    private static void writeToLogInFile(String details) {
+    public static void writeToLogInFile(String details) {
         try {
             FileWriter writer = new FileWriter(logInDetails.getName(), true);
             writer.write(details);

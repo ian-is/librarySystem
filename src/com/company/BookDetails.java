@@ -10,7 +10,7 @@ public class BookDetails {
                 String author = Menu.getInput("Enter the name of the author");
                 String genre = Menu.getInput("Enter the genre of the book");
                 int ISBN = Integer.parseInt(Menu.getInput("Enter the ISBN"));
-                bookDetails = bookTitle + " , " + author + " , " + genre + " , " + ISBN + " . " + "\n";
+                bookDetails = bookTitle + " , " + author + " , " + genre + " , " + String.valueOf(ISBN) + " . " + "\n";
             } catch (Exception e) {
                 System.out.println("error, please re-enter details" + " " + e);
             }

@@ -8,18 +8,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.io.IOException;
+import com.company.FileHandling;
 
 public class Main {
-//add a sign in and register system
-
-
-
-
 
     public static void main(String[] args) {   //main menu
 
         Menu.mainMenu();
-    }}
+       FileHandling.CreateFile();
+       FileHandling.CreateLogInFile();
+       FileHandling.WriteToFile();
+       FileHandling.writeToLogInFile("");
+       FileHandling.AddToList();
+       Members.userInput();
+       BookDetails.BookDetails();
+       Members.LogIn();
+       Members.UserRegister();
+
+
+
+    }
+}
 
 
 
@@ -187,7 +196,7 @@ public class Main {
         return emailAndPassword;
 
     }
-    }
+    }*/
 
 
 
